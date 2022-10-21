@@ -1,0 +1,8 @@
+Prevention
+You should use msg.sender instead of tx.origin to not let this happen
+Example:
+
+function setOwner(address newOwner) public {
+    require(msg.sender == owner, "Not owner" );
+    owner = newOwner;
+}
